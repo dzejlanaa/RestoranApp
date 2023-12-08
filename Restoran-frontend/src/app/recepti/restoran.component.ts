@@ -84,31 +84,7 @@ export class RestoranComponent implements OnInit {
     return this.randomPodaci;
   }
   
- /*HTML za random
 
- <button id ="btn1" class="position-absolute top-2 start-50 translate-middle btn btn-light btn-primary rounded-pill" (click)="testirajWebApi3()">
-  Ucitaj random jelo
-</button>
-
-<table class="table table-warning">
-  <tr>
-    
-    <th>Naziv jela lalalal</th>
-    <th>Naziv restorana lalalal</th>
-    
-    
-  </tr>
-  <tbody>
-  <tr *ngFor="let z of getRandomPodaci()">
-   
-    <td>{{z.naziv}}</td>
-    
-    <td>{{z.id}}</td>
-    
-  </tr>
-  </tbody>
-</table>
-*/
   
   
 
@@ -158,14 +134,7 @@ urediJelo(student: any){
 }
 
 
-/*
-loadRandom(){
-  return this.httpKlijent.get(MojConfig.adresa_servera + "/Jelo/Get")
-    .subscribe((res:any) => {
-      this.opstine = res;
-    })
-}
-*/
+
 
   }
 
