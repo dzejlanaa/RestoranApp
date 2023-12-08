@@ -1,0 +1,43 @@
+<div
+  class="modal fade show"
+  id="exampleModalLive"
+  tabindex="-1"
+  aria-labelledby="exampleModalLiveLabel"
+  aria-modal="true"
+  role="dialog"
+  style="display: block"
+  *ngIf="urediJelo!=null && urediJelo.prikazi"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLiveLabel">{{urediJelo.name}}</h5>
+        <button type="button" class="btn-close" aria-label="Close" (click)="urediJelo.prikazi=false"></button>
+      </div>
+      <div class="modal-body">
+        <div class="mb-3">
+          <label class="form-label">Naziv</label>
+          <input class="form-control" type="text" placeholder="Naziv" [(ngModel)]="urediJelo.naziv"/>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Cijena</label>
+          <input class="form-control" type="text" placeholder="Cijena" [(ngModel)]="urediJelo.Cijena"/>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Restoran</label>
+            <select class="form-control" placeholder="Izaberi restoran" [(ngModel)]="urediJelo.restoran_id">
+              <option *ngFor="let opstina of opstine" value="{{opstina.id}}">{{opstina.opis}}</option>
+            </select>
+          </div>
+        
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="urediJelo.prikazi=false">Close</button>
+        <button type="button" class="btn btn-primary" (click)="spasiPromjene1()">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+

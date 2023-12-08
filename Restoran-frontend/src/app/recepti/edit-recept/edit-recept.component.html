@@ -1,0 +1,44 @@
+
+<div
+  class="modal fade show"
+  id="exampleModalLive"
+  tabindex="-1"
+  aria-labelledby="exampleModalLiveLabel"
+  aria-modal="true"
+  role="dialog"
+  style="display: block"
+  *ngIf="urediRecept!=null && urediRecept.prikazi"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLiveLabel">{{urediRecept.name}}</h5>
+        <button type="button" class="btn-close" aria-label="Close" (click)="urediRecept.prikazi=false"></button>
+      </div>
+      <div class="modal-body">
+        <div class="mb-3">
+          <label class="form-label">Naziv</label>
+          <input class="form-control" type="text" placeholder="Naziv" [(ngModel)]="urediRecept.naziv"/>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Adresa</label>
+          <input class="form-control" type="text" placeholder="Adresa" [(ngModel)]="urediRecept.adresa"/>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Telefon</label>
+          <input class="form-control" type="text" placeholder="Telefon" [(ngModel)]="urediRecept.telefon"/>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Tip</label>
+          <input class="form-control" type="text" placeholder="Tip" [(ngModel)]="urediRecept.tip"/>
+        </div>
+        
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="urediRecept.prikazi=false">Close</button>
+        <button type="button" class="btn btn-primary" (click)="spasiPromjene()">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>

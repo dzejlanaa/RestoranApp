@@ -1,0 +1,96 @@
+
+<div id="glavni">
+
+<div id="lijevi">
+  
+<button id ="btn1" class="position-absolute top-2 start-50 translate-middle btn btn-light btn-primary rounded-pill" (click)="testirajWebApi()">
+  Ucitaj restorane
+</button>
+
+
+<table class="table table-warning">
+  <tr>
+    <th>ID</th>
+    <th>Naziv</th>
+    <th>Adresa</th>
+    <th>Telefon</th>
+     <th>Tip</th>
+    
+  </tr>
+  <tbody>
+  <tr *ngFor="let s of getRestoranPodaci()">
+    <td>{{s.id}}</td>
+    <td>{{s.naziv}}</td>
+    <td>{{s.adresa}}</td>
+    <td>{{s.telefon}}</td>
+    <td>{{s.tip}}</td>
+    <button (click)="urediRecept(s)">Uredi</button>
+  </tr>
+  </tbody>
+</table>
+
+<button class="form-label" (click)="dodajRestoran()">Novi restoran</button>
+
+</div>
+
+<div id="desni">
+
+
+
+  <button id="btn2" class="position-absolute top-2 start-50 translate-middle btn btn-light btn-primary rounded-pill" (click)="testirajWebApi2()">
+    Ucitaj jela
+  </button>
+  
+  
+  <table id = "desnatbl" class="table table-warning">
+    <tr>
+      <th>ID</th>
+      <th>Naziv</th>
+      <th>Cijena</th>
+      <th>Naziv restorana</th>
+      
+      
+    </tr>
+    <tbody>
+    <tr *ngFor="let n of getJeloPodaci()">
+      <td>{{n.id}}</td>
+      <td>{{n.naziv}}</td>
+      <td>{{n.cijena}}</td>
+      <td>{{n.restoran.naziv}}</td>
+      
+    </tr>
+    </tbody>
+  </table>
+
+  <button class="form-label" (click)="dodajJelo()">Novo jelo</button>
+</div>
+
+
+<button id ="btn3" class="position-absolute top-2 start-50 translate-middle btn btn-light btn-primary rounded-pill" (click)="testirajWebApi3()">
+  Random jelo
+</button>
+<table class="table table-warning">
+  <tr>
+    
+    <h3 >Naziv random jela: {{dobavljanje.naziv}}</h3>
+    <h3 >Naziv random restorana: {{dobavljanje.restoran.naziv}}</h3>
+    
+    
+  </tr>
+  <tbody>
+  
+
+  
+
+  </tbody>
+</table>
+
+
+</div>
+
+
+
+<app-edit-recept [urediRecept] = "odabraniRecept"></app-edit-recept>
+
+<app-edit-jelo [urediJelo] = "odabranoJelo"></app-edit-jelo>
+
